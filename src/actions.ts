@@ -87,6 +87,7 @@ export async function run({
           if (flag) {
             console.log(`成功下单，请去订单页面查看`);
             clearInterval(timer);
+            window.location.reload();
           } else {
             count += 1;
             console.log(`下单失败，第${count}次下单`);
