@@ -1,0 +1,24 @@
+{
+  "name": "@xiaochuan-dev/scu-cgzx",
+  "version": "0.0.1",
+  "main": "index.js",
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "packageManager": "yarn@1.22.22",
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^12.1.2",
+    "@types/sm-crypto": "^0.3.4",
+    "base64-js": "^1.5.1",
+    "dayjs": "^1.11.13",
+    "rollup": "^4.40.2",
+    "rollup-plugin-terser": "^7.0.2",
+    "sm-crypto": "^0.3.13",
+    "tslib": "^2.8.1",
+    "typescript": "^5.8.3"
+  }
+}
