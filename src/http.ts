@@ -404,34 +404,41 @@ class ApiService {
 
     const res = await req.json();
     const resData = res.data;
-    const decodeStr = sm4Decrypt(resData);
-    const _decodeStr = JSON.parse(decodeStr);
-    const _res = JSON.parse(_decodeStr);
-    return _res.data;
+
+    try {
+      const decodeStr = sm4Decrypt(resData);
+      const _decodeStr = JSON.parse(decodeStr);
+      const _res = JSON.parse(_decodeStr);
+      return _res.data;
+    } catch (error) {
+      console.log(res);
+      return null;
+    }
   }
 
-  async post({
-    path,
-    data: _data
-  }) {
+  async post({ path, data: _data }) {
     const { sign, data } = getSignAndData(_data);
     const req = await fetch(`${this.baseUrl}${path}`, {
       method: 'POST',
       body: JSON.stringify({ data, sign }),
       headers: {
         ...this.defaultHeaders,
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
       },
     });
     const res = await req.json();
     const resData = res.data;
-    const decodeStr = sm4Decrypt(resData);
-    const _decodeStr = JSON.parse(decodeStr);
-    const _res = JSON.parse(_decodeStr);
-    return _res.data;
 
+    try {
+      const decodeStr = sm4Decrypt(resData);
+      const _decodeStr = JSON.parse(decodeStr);
+      const _res = JSON.parse(_decodeStr);
+      return _res.data;
+    } catch (error) {
+      console.log(res);
+      return null;
+    }
   }
-
 }
 
 export const apiService = new ApiService();
