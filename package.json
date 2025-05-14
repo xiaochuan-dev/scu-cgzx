@@ -5,6 +5,9 @@
   "scripts": {
     "build": "rollup -c"
   },
+  "files": [
+    "dist"
+  ],
   "keywords": [],
   "author": "",
   "license": "ISC",
