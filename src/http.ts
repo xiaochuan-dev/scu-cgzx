@@ -249,7 +249,7 @@ function u() {
           c
         );
       } catch (d) {
-        return console.error(d), null;
+        throw d;
       }
     }),
     (this.decryptData_ECB = function (n) {
@@ -306,7 +306,7 @@ function u() {
           return n;
         })(u);
       } catch (c) {
-        return console.log(c), console.error(c), null;
+        throw c;
       }
     }),
     (this.encryptData_CBC = function (n) {
@@ -324,7 +324,7 @@ function u() {
           d
         );
       } catch (g) {
-        return console.error(g), null;
+        throw g;
       }
     });
   var e = function (e) {
