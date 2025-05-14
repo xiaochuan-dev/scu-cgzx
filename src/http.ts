@@ -409,6 +409,9 @@ class ApiService {
       const decodeStr = sm4Decrypt(resData);
       const _decodeStr = JSON.parse(decodeStr);
       const _res = JSON.parse(_decodeStr);
+      if (_res.code !== 0) {
+        console.log(_res);
+      }
       return _res.data;
     } catch (error) {
       console.log(res);
@@ -433,6 +436,9 @@ class ApiService {
       const decodeStr = sm4Decrypt(resData);
       const _decodeStr = JSON.parse(decodeStr);
       const _res = JSON.parse(_decodeStr);
+      if (_res.code !== 0) {
+        console.log(_res);
+      }
       return _res.data;
     } catch (error) {
       console.log(res);
